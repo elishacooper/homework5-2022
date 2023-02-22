@@ -1,0 +1,173 @@
+
+/*step 1 - animate logo with keyframes*/
+@keyframes animated {
+    from {width: 25px;}
+    to {width: 475px}
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+header>img{
+    animation-name: animated;
+    animation-duration: 5s;
+}
+
+/*step 2 - font refine & background image/color */
+body{
+    font-family: 'Poppins', serif;
+    background-image: url('../images/concrete_seamless.png');
+    background-color: #f1f1f1;
+}
+
+/*step 3 - header tag to use flex */
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/*step 4 - nav_links tag to use flex */
+.nav_links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*step 5 - style links when visited (challenge problem) */
+.nav_links li a:visited{
+    color: blue;
+}
+
+/*step 6 - style header within card class */
+.card > header{
+    background-color: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0px 20px 0px;
+    border-radius: 50px 50px 0px 0px;
+}
+
+/*step 7 - set card tag flex property and curve corners to complete step 6 */
+.card {
+    flex-basis: 450px;
+    border-radius: 50px 50px 0px 0px;
+}
+
+/*step 8 - pricing class to use flex and centered */
+.pricing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/*step 9 - style images in gallery class */
+.gallery >img{
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+
+/*step 10 - gallery class to use flex */
+.gallery {
+    display: flex;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/*Specifications for when the screen-size is greater than 900px*/
+@media screen and (min-width:900px){
+/*step 11 - edit header tag and nav_links class to use flex */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.nav_links{
+    display: flex;
+    flex-direction: row;
+}
+
+/*step 12 - set pricing and card classes to flex-property of 275px */
+.card {
+    flex-basis: 275px;
+}
+
+.pricing {
+    flex-basis: 275px;
+}
+
+/*step 13 - modify first header so it remains visible at top of screen when scrolling (challenge problem)*/
+body>header{
+    position: sticky;
+    top: 0;
+}
+}
+
+/*Specifications for prefered reduced motion */
+@media screen and (prefers-reduced-motion: reduce){
+    /*step 14 - logo class should appear but not be animted*/
+    body>header{
+        animation: none;
+    }
+}
+
+/*specifications for when page is printed in portrait mode*/
+@media print{
+    /*step 15 - body font styling*/
+    body{
+        font-family: Arial, Helvetica;
+
+/*step 16 - remove background image*/
+        background-image: none;
+    }
+
+/*step 17 - edit nav/nav_links spacing */
+header>img{
+    display: flex;
+    align-content: center;
+}
+
+nav{
+    width: 100%;
+}
+
+.nav_links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+/*step 18 - edit pricing class so they align along the bottom */
+.pricing{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/*step 19 - establish card element border and flex-basis */
+.card{
+    border: 2px solid #45ADDD;
+    flex-basis: 325px;
+}
+
+/*step 20 - hide gallery */
+.gallery{
+    display: none;
+    visibility: hidden;
+}
+
+#gallery{
+    visibility: hidden;
+}
+
+/*step 21 - add thumbs up (challenge problem)*/
+.card ul li:nth-child(2)::after{
+    content: "\1F44D";
+}
+}
